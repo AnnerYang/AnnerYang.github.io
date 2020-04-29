@@ -2,12 +2,12 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://mazhuang.org
+url: https://anneryang.github.io
 date_format: "ordinal"
-title: 码志
-subtitle: "公众号：闷骚的程序员"
-description: "马壮的个人博客，公众号：闷骚的程序员"
-keywords: 码志, Zhuang Ma, mzlogin, mazhuang, 闷骚的程序员
+title: 博客
+subtitle: "路漫漫其修远兮"
+description: "杨峰的个人博客"
+keywords: 学习Java的小学生
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
@@ -15,12 +15,12 @@ side_bar_repo_limit: 5
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Zhuang Ma
+author: yangfeng
 organization: 
 organization_url: 
-github_username: mzlogin
-location: Wuhan, China
-email: chumpma@gmail.com
+github_username: AnnerYang
+location: Hangzhou, China
+email: yangfeng0612@outlook.com
 
 # ---------------- #
 #    Navigation    #
@@ -85,7 +85,7 @@ collections:
         output: true
         permalink: /wiki/:path/
 
-repository: mzlogin/mzlogin.github.io
+repository: AnnerYang/AnnerYang.github.io
 
 # ---------------- #
 #      Comments    #
@@ -95,21 +95,21 @@ comments_provider: gitalk
 # !!!重要!!! 请修改下面这些信息为你自己申请的
 # !!!Important!!! Please modify infos below to yours
 # https://disqus.com
-disqus:
-    username: 
+# disqus:
+#    username: 
 # https://imsun.net/posts/gitment-introduction/
-gitment:
-    owner: mzlogin
-    repo: blog-comments
-    oauth:
-        client_id: d2e1cbbd298958076462
-        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+# gitment:
+#    owner: mzlogin
+#    repo: blog-comments
+#    oauth:
+#        client_id: d2e1cbbd298958076462
+#        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: mzlogin
+    owner: yangfeng
     repo: blog-comments
-    clientID: d2e1cbbd298958076462
-    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+    clientID: 979d1d5c6cc8979463fe
+    clientSecret: 774a217a44160eff1f1dc6eed82b0b182d444c5d
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
@@ -125,10 +125,10 @@ simple_jekyll_search:
 # ---------------- #
 #      Google      #
 # ---------------- #
-google:
-    analytics_id: UA-80669434-1
-    adsense:
-        footer: true
-        sidebar: true 
-        content_header: true
-        content_footer: false
+# google:
+#    analytics_id: UA-80669434-1
+#    adsense:
+#        footer: true
+#        sidebar: true 
+#        content_header: true
+#        content_footer: false
