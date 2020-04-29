@@ -3,10 +3,9 @@ layout: post
 title: Gitpages+jekyll搭建个人博客
 categories: Tools
 description: GitHub+jekyll搭建个人博客
-keywords: Gitpages, jekyll,ruby
+keywords: Gitpages, jekyll
 ---
-
-# GitHub+jekyll搭建个人博客
+本问旨在记录自己手动调试方法
 
 ## 1. 软件安装
 
