@@ -16,7 +16,7 @@ keywords: Gitpages, jekyll
 - 安装 Bundler。 更多信息请参阅“[Bundler](https://bundler.io/)”。
   - 安装完 **Ruby** 和 **Jelyll** 后, 创建一个新的Jekyll站点后再开始安装, 目录如下:
 
-![image-20200429162530728](E:\Git\AnnerYang.github.io\images\posts\tools\image-20200429162530728.png)
+![](/images/posts/tools/image-20200429162530728.png)
 
 -  在仓库根目录打开Gemfile文件修改添加如下内容
 
@@ -35,19 +35,19 @@ source "https://gems.ruby-china.com" #修改为国内源
 
 1. 在github上任何页面的右上角，使用下拉菜单选择New repository（新建仓库）。
 
-![带有创建新仓库选项的下拉菜单](E:\Git\AnnerYang.github.io\images\posts\tools\repo-create.png)
+![](/images/posts/tools/repo-create.png)
 
 2. 使用Owner（所有者）下拉菜单选择你想要拥有仓库的帐户。
 
-![所有者下拉菜单](E:\Git\AnnerYang.github.io\images\posts\tools\create-repository-owner.png)
+![](/images/posts/tools/create-repository-owner.png)
 
 3. 输入仓库的名称和说明（可选）。 如果您创建的是用户或组织站点，仓库名称必须为`<user>.github.io`或`<organization>.github.io`。 
 
-![创建仓库字段](E:\Git\AnnerYang.github.io\images\posts\tools\create-repository-name-pages.png)
+![](/images/posts/tools/create-repository-name-pages.png)
 
 4. 选择存储库可见性。
 
-![Radio buttons to select repository visibility](E:\Git\AnnerYang.github.io\images\posts\tools\create-repository-public-private.png)
+![](/images/posts/tools/create-repository-public-private.png)
 
 ### 2.2创建站点
 
@@ -109,7 +109,7 @@ source "https://gems.ruby-china.com" #修改为国内源
    http://localhost:4000
    ```
 
-   ![image-20200429163538394](E:\Git\AnnerYang.github.io\images\posts\tools\image-20200429163538394.png)
+   ![image-20200429163538394](/images/posts/tools/image-20200429163538394.png)
 
 9. 将你的GitHub仓库添加为远程存储库，将USER替换为拥有仓库的帐户，并将REPOSITORY替换为仓库的名称
 
