@@ -5,6 +5,7 @@ categories: Tools
 description: GitHub+jekyll搭建个人博客
 keywords: Gitpages, jekyll
 ---
+
 本问旨在记录自己手动调试方法
 
 ## 1. 软件安装
@@ -196,4 +197,3 @@ source "https://gems.ruby-china.com" #修改为国内源
     5. If you are on **Windows** then you must **restart your machine**.
 
     You are now on your merry way to being able to make edits while the Jekyll site is being served.
-
