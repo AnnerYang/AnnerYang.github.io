@@ -4,6 +4,7 @@ title: Gitpages+jekyll搭建个人博客
 categories: Tools
 description: GitHub+jekyll搭建个人博客
 keywords: Gitpages, jekyll,ruby
+typora-root-url: ..\images\posts\tools
 ---
 
 Jekyll 是一个静态网站生成器。用你喜欢的 标记语言书写内容并交给 Jekyll 处理，它将利用模板为你创建一个静态网站。你可以 调整你想要的网址样式、在网站上显示哪些数据 等等。
@@ -16,7 +17,7 @@ Jekyll 是一个静态网站生成器。用你喜欢的 标记语言书写内容
 - 安装 Bundler。 更多信息请参阅“[Bundler](https://bundler.io/)”。
   - 安装完 **Ruby** 和 **Jelyll** 后, 创建一个新的Jekyll站点后再开始安装, 目录如下:
 
-![image-20200429162530728](C:\Users\yangf\Desktop\image\image-20200429162530728.png)
+![](/images/posts/tools/image-20200429162530728.png)
 
 -  在仓库根目录打开Gemfile文件修改添加如下内容
 
@@ -29,25 +30,25 @@ source "https://gems.ruby-china.com" #修改为国内源
 
 ## 2. 使用Jekyll创建GitHub Pages网站
 
-### 2.1为站点创建存储仓库
+### 2.1 为站点创建存储仓库
 
 1. 在github上任何页面的右上角，使用下拉菜单选择New repository（新建仓库）。
 
-![带有创建新仓库选项的下拉菜单](C:\Users\yangf\Desktop\image\repo-create.png)
+![](/images/posts/tools/repo-create.png)
 
 2. 使用Owner（所有者）下拉菜单选择你想要拥有仓库的帐户。
 
-![所有者下拉菜单](C:\Users\yangf\Desktop\image\create-repository-owner.png)
+![](/images/posts/tools/create-repository-owner.png)
 
 3. 输入仓库的名称和说明（可选）。 如果您创建的是用户或组织站点，仓库名称必须为`<user>.github.io`或`<organization>.github.io`。 
 
-![创建仓库字段](C:\Users\yangf\Desktop\image\create-repository-name-pages.png)
+![](/images/posts/tools/create-repository-name-pages.png)
 
 4. 选择存储库可见性。
 
-![Radio buttons to select repository visibility](C:\Users\yangf\Desktop\image\create-repository-public-private.png)
+![](/images/posts/tools/create-repository-public-private.png)
 
-### 2.2创建站点
+### 2.2 创建站点
 
 1. 打开 Git Bash。
 
@@ -106,8 +107,8 @@ source "https://gems.ruby-china.com" #修改为国内源
    ```
    http://localhost:4000
    ```
-
-   ![image-20200429163538394](C:\Users\yangf\Desktop\image\image-20200429163538394.png)
+   
+   ![image-20200429163538394](/images/posts/tools/image-20200429163538394.png)
 
 9. 将你的GitHub仓库添加为远程存储库，将USER替换为拥有仓库的帐户，并将REPOSITORY替换为仓库的名称
 
@@ -161,63 +162,9 @@ source "https://gems.ruby-china.com" #修改为国内源
     Applying: init files
     ```
 
-    2cd578fb03bd78c5777934e674ae04599b69383e
+### 2.3 常见错误处理方法
+- [Fix SSL “certificate verify failed”][]
+- [Fix “The GitHub API credentials you provided aren’t valid.”][]
 
-### 操作步骤
-
-1. 在 Tapd 项目里开启 Gitlab 服务；
-
-2. 在你可用的公网 Nginx 服务器的配置文件里添加一段配置：
-
-    ```
-    server {
-      listen 80;
-      server_name tapdhooks.yourdomain.com;
-      location ~ ^/(\d+)/([a-z0-9]+) {
-        proxy_set_header X-Gitlab-Event $http_X_Gitee_Event ;
-        proxy_set_header X-Gitlab-Token $http_X_Gitee_Token ;
-        proxy_pass https://hook.tapd.cn ;
-      }
-    }
-    ```
-
-3. 将 tapdhooks.yourdomain.com 解析到该 Nginx 服务器 IP；
-
-4. 将替换过域名的 webhook 链接配置到 Gitee 项目里；
-
-    比如原 webhook 链接：https://hook.tapd.cn/32198210/adcc961bc533c74a257ef96295812fa7
-
-    将 `https://hook.tapd.cn` 替换成 `http://tapdhook.yourdomain.com` 得到新的链接
-
-    http://tapdhooks.yourdomain.com/32198210/adcc961bc533c74a257ef96295812fa7
-
-搞定！
-
-### 小插曲
-
-事情就是这么简单，但往往实操的时候不会这么顺利，会有些小插曲，比如我就遇到了。
-
-如上配置之后，我向 Gitee push 代码却发现并没有在 Tapd 看到源码关联，在 Gitee 配置 webhook 的地方 test 了一下，报 502 bad gateway。
-
-把 test 请求在 postman 里构造出来，然后使用 hook.tapd.cn 的原链接，请求是成功的，加上 Nginx 新增的 Header，也没有问题，但换回自己域名的链接就报 502 了。在 Nginx 服务器上将错误日志打印出来：
-
-> 2019/09/12 15:51:25 [crit] 24721#24721: *287854 SSL_do_handshake() failed (SSL: error:1411B041:SSL routines:SSL3_GET_NEW_SESSION_TICKET:malloc failure) while SSL handshaking to upstream, client: 28.39.21.123, server: tapdhooks.yourdomain.com, request: "POST /32198210/adcc961bc533c74a257ef96295812fa7 HTTP/1.1", upstream: "https://119.29.122.86:443/32198210/adcc961bc533c74a257ef96295812fa7", host: "tapdhooks.yourdomain.com"
-
-所以是 Nginx 向 https://hook.tapd.cn 链接发起请求时，SSL 握手错误了。
-
-在网上搜了一些网友们的帖子后，得出的结论基本是因为客户端与服务端支持的 SSL protocol 版本不一致导致的，用工具查了一下 Tapd 服务器支持的 protocol 版本是 TLSv2，而我 Nginx 服务器的 OpenSSL 版本较低，可能不支持这个，于是先是升级了服务器上的 OpenSSL 的版本，然后通过重新编译升级了 Nginx 的 OpenSSL 版本，之后问题解决。这两步自己维护 Ngninx 服务器的同学应该不在话下，在此不再赘述，以下是我参考的链接：
-
-- 升级服务器 OpenSSL 版本： [CentOS之——升级openssl为最新版][]
-- 升级 Nginx 的 OpenSSL 版本：[nginx旧版本openssl升级][]
-
-## 参考
-
-- [分享一个让源码关联支持Gogs/Gitee等平台的解决方案][]
-- [Tapd Git Hooks][]
-- [nginx旧版本openssl升级][]
-- [CentOS之——升级openssl为最新版][]
-
-[分享一个让源码关联支持Gogs/Gitee等平台的解决方案]: https://www.tapd.cn/forum/view/67001
-[Tapd Git Hooks]: https://github.com/notzheng/Tapd-Git-Hooks
-[nginx旧版本openssl升级]: https://my.oschina.net/u/1449160/blog/220415
-[CentOS之——升级openssl为最新版]: https://blog.csdn.net/l1028386804/article/details/53165252
+[Fix SSL “certificate verify failed”]:http://blog.johannesmp.com/2017/02/13/fixing-jekyll-serve-on-windows/
+[Fix “The GitHub API credentials you provided aren’t valid.”]:http://blog.johannesmp.com/2017/02/13/fixing-jekyll-serve-on-windows/
