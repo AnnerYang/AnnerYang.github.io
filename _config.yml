@@ -46,9 +46,9 @@ navs:
     href: /wiki/
     label: 维基
 
-  -
-    href: /links/
-    label: 链接
+#  -
+#    href: /links/
+#    label: 链接
 
   -
     href: /about/
@@ -91,7 +91,7 @@ repository: AnnerYang/AnnerYang.github.io
 #      Comments    #
 # ---------------- #
 # support provider: disqus, gitment, gitalk
-comments_provider: gitalk
+comments_provider: valine
 # !!!重要!!! 请修改下面这些信息为你自己申请的
 # !!!Important!!! Please modify infos below to yours
 # https://disqus.com
@@ -105,12 +105,21 @@ comments_provider: gitalk
 #        client_id: d2e1cbbd298958076462
 #        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # https://github.com/gitalk/gitalk#install
-gitalk:
-    owner: yangfeng
-    repo: blog-comments
-    clientID: 979d1d5c6cc8979463fe
-    clientSecret: 774a217a44160eff1f1dc6eed82b0b182d444c5d
+#gitalk:
+#   owner: yangfeng
+#    repo: blog-comments
+#    clientID: 979d1d5c6cc8979463fe
+#    clientSecret: 774a217a44160eff1f1dc6eed82b0b182d444c5d
 # 在使用其它评论组件时可点击显示 Disqus
+## Valine
+  # please refer to https://valine.js.org/en/ for more info.
+valine:
+    app_id      : hMKHHCSeKi0pJcjnBpyamCJH-gzGzoHsz # LeanCloud App id
+    app_key     : jTfoyrSO5vo3jYodsONScXxC # LeanCloud App key
+    placeholder : # Prompt information
+    visitor     : # false (default)
+    meta        : # "[nick, mail, link]" (default) nickname, E-mail, Personal-site
+    
 lazy_load_disqus : false
 
 # ---------------- #
